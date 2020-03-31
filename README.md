@@ -44,8 +44,10 @@ npm run preview
 
 Deploy to github pages
 ``sh
-
+npm run build
+npm run deploy
 ``
+The page will be available on https://yoanad.github.io/datavis-2020-group/.
 
 ## FAQ
 
