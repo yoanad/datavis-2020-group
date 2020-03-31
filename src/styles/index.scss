@@ -1,0 +1,59 @@
+@charset "utf-8";
+@import "~bulma/bulma";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+body {
+    margin: 30px;
+}
+
+.doll-wrapper {
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.doll-body {
+    position: relative;
+}
+
+.selected-tshirts img {
+    position: absolute;
+    top: 158px;
+    left: calc(50% - 100px);
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+    }
+}
+
+.selected-jeans img {
+    position: absolute;
+    top: 347px;
+    left: calc(50% - 83px);
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+    }
+}
+
+.t-shirts-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 2;
+    padding-top: 158px;
+}
+
+.jeans-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    img {
+        align-self: flex-start;
+    }
+}
