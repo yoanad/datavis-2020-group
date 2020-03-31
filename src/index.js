@@ -8,8 +8,7 @@ import shortsImgSrc from './assets/images/shorts.png';
 import jeansImgSrc from './assets/images/jeans.png';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const doll = document.querySelector('.doll');
-    doll.src = dollImgSrc;
+    document.querySelector('.doll').src = dollImgSrc;
 
     const tshirts = document.querySelector('.t-shirts-wrapper');
     const jeans = document.querySelector('.jeans-wrapper');
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const jeansCost = activeJeans ? activeJeans.dataset.val : 0;
         const tshirtCost = activeTshirt ? activeTshirt.dataset.val : 0;
         const totalCost =  parseInt(jeansCost, 0) + parseInt(tshirtCost, 0);
-        
+
         document.querySelector('#total-cost').textContent = totalCost;
     }
 
