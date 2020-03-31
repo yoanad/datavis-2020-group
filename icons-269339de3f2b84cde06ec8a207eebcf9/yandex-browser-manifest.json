@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "api_version": 1,
+  "layout": {
+    "logo": "https://yoanad.github.io/datavis-2020-group/icons-269339de3f2b84cde06ec8a207eebcf9/yandex-browser-50x50.png",
+    "color": "#fff",
+    "show_title": true
+  }
+}

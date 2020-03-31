@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "name": "climate-paper-doll",
+  "description": "",
+  "icons": {
+    "60": "https://yoanad.github.io/datavis-2020-group/icons-269339de3f2b84cde06ec8a207eebcf9/firefox_app_60x60.png",
+    "128": "https://yoanad.github.io/datavis-2020-group/icons-269339de3f2b84cde06ec8a207eebcf9/firefox_app_128x128.png",
+    "512": "https://yoanad.github.io/datavis-2020-group/icons-269339de3f2b84cde06ec8a207eebcf9/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Yoana Dimova",
+    "url": null
+  }
+}
