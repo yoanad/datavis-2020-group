@@ -2,27 +2,46 @@ import 'normalize.css/normalize.css';
 import './styles/index.scss';
 
 import dollImgSrc from './assets/images/doll.png';
-import shirtImgSrc from './assets/images/tshirt.png';
-import blouseImgSrc from './assets/images/blouse.png';
-import shortsImgSrc from './assets/images/shorts.png';
-import jeansImgSrc from './assets/images/jeans.png';
+import shirtImgSrc from './assets/images/tshirt-generic.png';
+import jeansImgSrc from './assets/images/jeans-generic.png';
+
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.doll').src = dollImgSrc;
 
-    const tshirts = document.querySelector('.t-shirts-wrapper');
-    const jeans = document.querySelector('.jeans-wrapper');
+    // const tshirts = document.querySelector('.t-shirts-wrapper');
+    // const jeans = document.querySelector('.jeans-wrapper');
     const selectedTshirts = document.querySelector('.selected-tshirts');
     const selectedJeans = document.querySelector('.selected-jeans');
+    const tshirtCard = document.querySelector('.tshirt-card');
+    const jeansCard = document.querySelector('.jeans-card');
+
 
     const updateCost = () => {
         const activeJeans = selectedTshirts.querySelector('.active');
         const activeTshirt = selectedJeans.querySelector('.active');
-        const jeansCost = activeJeans ? activeJeans.dataset.val : 0;
-        const tshirtCost = activeTshirt ? activeTshirt.dataset.val : 0;
-        const totalCost =  parseInt(jeansCost, 0) + parseInt(tshirtCost, 0);
 
-        document.querySelector('#total-cost').textContent = totalCost;
+        const jeansCost = activeJeans ? activeJeans.dataset.val * 0.00075: 0;
+        const tshirtCost = activeTshirt ? activeTshirt.dataset.val * 0.00025 : 0;
+        const totalCost =  parseFloat(jeansCost, 0) + parseFloat(tshirtCost, 0);
+
+        document.querySelector('#total-cost').textContent = `${totalCost} litres`;
+
+        const drinkingCost = drinkingWaterDays(totalCost);
+        document.querySelector('#days').textContent = `${drinkingCost} days`;
+
+        pourWater();
+    }
+
+    const pourWater = () => {
+        document.querySelector('.water').classList.add('water-animate');
+    }
+
+    const drainWater = () => {
+        const water = document.querySelector('.water');
+        if (water.classList.contains("active")) {
+            water.classList.remove('water-animate');
+        }
     }
 
     const selectOneItem = (arr, selectedEl) => {
@@ -52,21 +71,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    tshirts.addEventListener('click', selectTshirt);
-    jeans.addEventListener('click', selectJeans);
+    const drinkingWaterDays = (litres) => {
+        return parseFloat(litres / 1.2);
+    }
+
+    tshirtCard.addEventListener('click', selectTshirt);
+    jeansCard.addEventListener('click', selectJeans);
 
     //Tmp setting of images
     // TODO: fix this after final images 
 
-    tshirts.querySelectorAll('img')[0].src = shirtImgSrc;
-    tshirts.querySelectorAll('img')[1].src = blouseImgSrc;
 
-    selectedTshirts.querySelectorAll('img')[0].src = shirtImgSrc;
-    selectedTshirts.querySelectorAll('img')[1].src = blouseImgSrc;
+    const tshirts = document.querySelectorAll('.tshirt');
+    const jeans = document.querySelectorAll('.jeans');
 
-    jeans.querySelectorAll('img')[0].src = jeansImgSrc;
-    jeans.querySelectorAll('img')[1].src = shortsImgSrc;
+    tshirts.forEach((el)=> {
+        el.src = shirtImgSrc;
+    });
 
-    selectedJeans.querySelectorAll('img')[0].src = jeansImgSrc;
-    selectedJeans.querySelectorAll('img')[1].src = shortsImgSrc;
+    jeans.forEach((el)=> {
+        el.src = jeansImgSrc;
+    });
 });

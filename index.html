@@ -25,32 +25,131 @@
             <div class="doll-body">
                 <img class="doll"/>
                 <div class="selected-tshirts">
-                    <img data-val="30" id="selected-tshirt-0"/>
-                    <img data-val="20" id="selected-tshirt-1"/>
+                    <img data-val="8662000" id="selected-tshirt-0 tshirt"/>
+                    <img data-val="4914000" id="selected-tshirt-1 tshirt"/>
                 </div>
                 <div class="selected-jeans">
-                    <img data-val="80" id="selected-jeans-0"/>
-                    <img data-val="100" id="selected-jeans-1"/>
+                    <img data-val="8662000" id="selected-jeans-0 jeans"/>
+                    <img data-val="4914000" id="selected-jeans-1 jeans"/>
                 </div>
             </div>
             <div class="clothes-wrapper">
-                <div class="t-shirts-wrapper">
-                    <img data-id="0" class="Shirt-1"/>
-                    <img data-id="1" class="Shirt-2"/>
+                <div class="tshirts-wrapper">
+                    <div class="card tshirt-card">
+                      <div class="card-content">
+                        <img data-id="0" class="Shirt-1 tshirt tshirt-option"/>
+                        <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">India</span></p>
+                        <p class="is-6">Water usage:</p>
+                        <div class="drop-container">
+                          <span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card tshirt-card">
+                      <div class="card-content">
+                        <img data-id="1" class="Shirt-2 tshirt tshirt-option"/>
+                        <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">Pakistan</span></p>
+                        <p class="is-6">Water usage:</p>
+                        <div class="drop-container">
+                          <span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop-inactive"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card tshirt-card">
+                      <div class="card-content">
+                        <img data-id="1" class="Shirt-2 tshirt tshirt-option"/>
+                        <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">China</span></p>
+                        <p class="is-6">Water usage:</p>
+                        <div class="drop-container">
+                          <span class="drop"></span><span class="drop-inactive"></span><span class="drop-inactive"></span><span class="drop-inactive"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card tshirt-card">
+                      <div class="card-content">
+                        <img data-id="1" class="Shirt-2 tshirt tshirt-option"/>
+                        <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">USA</span></p>
+                        <p class="is-6">Water usage:</p>
+                        <div class="drop-container">
+                          <span class="drop"></span><span class="drop"></span><span class="drop-inactive"></span><span class="drop-inactive"></span>
+                        </div>
+                      </div>
+                    </div>
                 </div>
+
                 <div class="jeans-wrapper">
-                    <img data-id="0" class="Jeans-1"/>
-                    <img data-id="1" class="Jeans-2"/>
+                  <div class="card jeans-card">
+                    <div class="card-content">
+                      <img data-id="0" class="Jeans-1 jeans jeans-option"/>
+                      <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">India</span></p>
+                      <p class="is-6">Water usage:</p>
+                      <div class="drop-container">
+                        <span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card jeans-card">
+                    <div class="card-content">
+                      <img data-id="1" class="Jeans-2 jeans jeans-option"/>
+                      <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">Pakistan</span></p>
+                      <p class="is-6">Water usage:</p>
+                      <div class="drop-container">
+                        <span class="drop"></span><span class="drop"></span><span class="drop"></span><span class="drop-inactive"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card jeans-card">
+                    <div class="card-content">
+                      <img data-id="1" class="Jeans-2 jeans jeans-option"/>
+                      <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">China</span></p>
+                      <p class="is-6">Water usage:</p>
+                      <div class="drop-container">
+                        <span class="drop"></span><span class="drop-inactive"></span><span class="drop-inactive"></span><span class="drop-inactive"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card jeans-card">
+                    <div class="card-content">
+                      <img data-id="1" class="Jeans-2 jeans jeans-option"/>
+                      <p><span class=" is-6">Source: </span><span class=" is-6 is-bold">USA</span></p>
+                      <p class="is-6">Water usage:</p>
+                      <div class="drop-container">
+                        <span class="drop"></span><span class="drop"></span><span class="drop-inactive"></span><span class="drop-inactive"></span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
           </section>
-          <section>
+          <section class="cost-section">
             <div class="container">
-                <h2 class="title">Your score</h1>
+                <h2 class="title">Your outfit costs</h1>
                 <h3 id="total-cost" class="subtitle">
-                  0.00
-                </h2>
+                  0.00 litres
+                </h3>
+            </div>
+            <div class="container">
+              <h2 class="title">This is enough water for you to drink for</h2>
+              <h3 id="days" class="subtitle">
+                0 days
+              </h3>
+              <div class="glass">
+                <div class="water"></div>
               </div>
+            </div>
+          </section>
+          <section>
+            <h1 class="title">Information and background of the project</h1>
+            <h2 class="subtitle">
+              The data
+            </h2>
+            <h2 class="subtitle">
+              The technologies
+            </h2>
+            <h2 class="subtitle">
+              About us :)
+            </h2>
           </section>
     </body>
 </html>
