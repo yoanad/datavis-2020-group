@@ -9,12 +9,13 @@ import jeansImgSrc from './assets/images/jeans-generic.png';
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.doll').src = dollImgSrc;
 
-    // const tshirts = document.querySelector('.t-shirts-wrapper');
-    // const jeans = document.querySelector('.jeans-wrapper');
+    const tshirtsWrapper = document.querySelector('.tshirts-wrapper');
+    const jeansWrapper = document.querySelector('.jeans-wrapper');
     const selectedTshirts = document.querySelector('.selected-tshirts');
     const selectedJeans = document.querySelector('.selected-jeans');
-    const tshirtCard = document.querySelector('.tshirt-card');
-    const jeansCard = document.querySelector('.jeans-card');
+    const tshirtCards = document.querySelectorAll('.tshirt-card');
+    const jeansCards = document.querySelectorAll('.jeans-card');
+    const maxCost = 8662;
 
 
     const updateCost = () => {
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalCost =  parseFloat(jeansCost, 0) + parseFloat(tshirtCost, 0);
 
         document.querySelector('#total-cost').textContent = `${totalCost} litres`;
+        document.querySelector('#total-cost').dataset.val = totalCost; 
 
         const drinkingCost = drinkingWaterDays(totalCost);
         document.querySelector('#days').textContent = `${drinkingCost} days`;
@@ -34,13 +36,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const pourWater = () => {
-        document.querySelector('.water').classList.add('water-animate');
+        let level;
+        const cup = document.querySelector('.cup');
+        const currCost = document.querySelector('#total-cost').dataset.val;
+
+        // level = (currCost / maxCost);
+
+        // cup.style.transform = `scaleY(${level})`;
+        // cup.style.transformOrigin = `${level * 100}% 100%`;
+        cup.classList.add('cup-animate');
     }
+
+
+    function repeatOften() {
+        // Do whatever
+        requestAnimationFrame(repeatOften);
+      }
+      requestAnimationFrame(repeatOften);
 
     const drainWater = () => {
         const water = document.querySelector('.water');
         if (water.classList.contains("active")) {
-            water.classList.remove('water-animate');
+            water.classList.remove('cup-animate');
         }
     }
 
@@ -54,34 +71,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const selectTshirt = (event) => {
-        if (event.target.tagName === 'IMG') {
-            const id = event.target.dataset.id;
-            const shirtToWear = selectedTshirts.querySelector(`#selected-tshirt-${id}`);
-            selectOneItem(selectedTshirts.querySelectorAll('img'), shirtToWear);
-            updateCost();
-        }
+        const id = event.currentTarget.dataset.id;
+        const shirtToWear = selectedTshirts.querySelector(`#selected-tshirt-${id}`);
+
+        selectOneItem(tshirtCards, event.currentTarget);
+        selectOneItem(selectedTshirts.querySelectorAll('img'), shirtToWear);
+        updateCost();
     }
 
     const selectJeans = (event) => {
-        if (event.target.tagName === 'IMG') {
-            const id = event.target.dataset.id;
-            const jeansToWear = selectedJeans.querySelector(`#selected-jeans-${id}`);
-            selectOneItem(selectedJeans.querySelectorAll('img'), jeansToWear);
-            updateCost();
-        }
+        const id = event.currentTarget.dataset.id;
+        const jeansToWear = selectedJeans.querySelector(`#selected-jeans-${id}`);
+
+        selectOneItem(jeansCards, event.currentTarget);
+        selectOneItem(selectedJeans.querySelectorAll('img'), jeansToWear);
+        updateCost();
     }
 
     const drinkingWaterDays = (litres) => {
-        return parseFloat(litres / 1.2);
+        return parseFloat(litres / 1.2).toFixed(2);
     }
 
-    tshirtCard.addEventListener('click', selectTshirt);
-    jeansCard.addEventListener('click', selectJeans);
+    document.querySelectorAll('.tshirt-card').forEach((el)=> {
+        el.addEventListener('click', selectTshirt);
+    })
+
+    document.querySelectorAll('.jeans-card').forEach((el)=> {
+        el.addEventListener('click', selectJeans);
+    })
 
     //Tmp setting of images
-    // TODO: fix this after final images 
-
-
     const tshirts = document.querySelectorAll('.tshirt');
     const jeans = document.querySelectorAll('.jeans');
 
