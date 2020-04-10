@@ -5,18 +5,13 @@ import dollImgSrc from './assets/images/doll.png';
 import shirtImgSrc from './assets/images/tshirt-generic.png';
 import jeansImgSrc from './assets/images/jeans-generic.png';
 
-
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.doll').src = dollImgSrc;
 
-    const tshirtsWrapper = document.querySelector('.tshirts-wrapper');
-    const jeansWrapper = document.querySelector('.jeans-wrapper');
     const selectedTshirts = document.querySelector('.selected-tshirts');
     const selectedJeans = document.querySelector('.selected-jeans');
     const tshirtCards = document.querySelectorAll('.tshirt-card');
     const jeansCards = document.querySelectorAll('.jeans-card');
-    const maxCost = 8662;
-
 
     const updateCost = () => {
         const activeJeans = selectedTshirts.querySelector('.active');
@@ -36,31 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const pourWater = () => {
-        let level;
         const cup = document.querySelector('.cup');
-        const currCost = document.querySelector('#total-cost').dataset.val;
-
-        // level = (currCost / maxCost);
-
-        // cup.style.transform = `scaleY(${level})`;
-        // cup.style.transformOrigin = `${level * 100}% 100%`;
 
         if (cup.classList.contains("cup-pour")) {
             cup.classList.remove('cup-pour');
         }
 
-        // cup.style.backgroundPosition = '';
         setTimeout(() => {
             cup.classList.add('cup-pour');
         }, 1000)
-    }
-
-    const drainWater = () => {
-        // debugger
-        const cup = document.querySelector('.cup');
-        if (cup.classList.contains("cup-pour")) {
-            cup.classList.remove('cup-drain');
-        }
     }
 
     const selectOneItem = (arr, selectedEl) => {
