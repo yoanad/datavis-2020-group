@@ -44,20 +44,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // cup.style.transform = `scaleY(${level})`;
         // cup.style.transformOrigin = `${level * 100}% 100%`;
-        cup.classList.add('cup-animate');
+
+        if (cup.classList.contains("cup-pour")) {
+            cup.classList.remove('cup-pour');
+        }
+
+        // cup.style.backgroundPosition = '';
+        setTimeout(() => {
+            cup.classList.add('cup-pour');
+        }, 1000)
     }
 
-
-    function repeatOften() {
-        // Do whatever
-        requestAnimationFrame(repeatOften);
-      }
-      requestAnimationFrame(repeatOften);
-
     const drainWater = () => {
-        const water = document.querySelector('.water');
-        if (water.classList.contains("active")) {
-            water.classList.remove('cup-animate');
+        // debugger
+        const cup = document.querySelector('.cup');
+        if (cup.classList.contains("cup-pour")) {
+            cup.classList.remove('cup-drain');
         }
     }
 

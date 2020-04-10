@@ -207,13 +207,22 @@ body {
     box-shadow: 0 0 0 6px #414141, 0 20px 35px rgba(0,0,0,1);
   }
 
-  .cup-animate {
+  .cup-pour {
     background-position: 3000px 0px;
 
     -webkit-transition: all 5s ease-out;
     -moz-transition: all 5s ease-out;
     -o-transition: all 5s ease-out;
     transition: all 5s ease-out;
+  }
+
+  .cup-drain {
+    background-position: 0px 350px;
+
+    // -webkit-transition: all 5s ease-out;
+    // -moz-transition: all 5s ease-out;
+    // -o-transition: all 5s ease-out;
+    // transition: all 5s ease-out;
   }
 
   .cup:before {
