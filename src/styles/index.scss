@@ -215,20 +215,14 @@ p {
 
   .cup-pour {
     background-position: 3000px 0px;
-
-    -webkit-transition: all 5s ease-out;
-    -moz-transition: all 5s ease-out;
-    -o-transition: all 5s ease-out;
-    transition: all 5s ease-out;
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
   }
 
   .cup-drain {
     background-position: 0px 350px;
-
-    // -webkit-transition: all 5s ease-out;
-    // -moz-transition: all 5s ease-out;
-    // -o-transition: all 5s ease-out;
-    // transition: all 5s ease-out;
   }
 
   .cup:before {

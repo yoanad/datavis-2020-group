@@ -43,13 +43,13 @@ module.exports = {
                             sourceMap: true
                         }
                     },
-                    {
-                        // Runs compiled CSS through postcss for vendor prefixing
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
+                    // {
+                    //     // Runs compiled CSS through postcss for vendor prefixing
+                    //     loader: 'postcss-loader',
+                    //     options: {
+                    //         sourceMap: true
+                    //     }
+                    // },
                     {
                         // compiles Sass to CSS
                         loader: 'sass-loader',
